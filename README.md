@@ -2,6 +2,6 @@
 
 Depends on jq
 
-  ./install.sh [~/.local/bin] 
+    ./install.sh [~/.local/bin] 
 
-  cd some-terraform-dir && tf2pulumi
+    cd some-terraform-dir && tf2pulumi
