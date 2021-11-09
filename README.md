@@ -1,4 +1,4 @@
-# tf-2-pulumi THAT JUST WORKS
+# tf-2-pulumi SIMPLER
 
 Depends on jq
 
