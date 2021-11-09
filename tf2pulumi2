@@ -9,6 +9,8 @@ terraform show -json \
 # NOW translate from
 #  "aws_s3_bucket" -> "aws:s3/bucket:Bucket"
 
+# curl https://raw.githubusercontent.com/pulumi/pulumi-aws/master/provider/cmd/pulumi-resource-aws/schema.json | jq '.types|keys' 
+
 # hints 
 #  - https://github.com/pulumi/pulumi-terraform-bridge
 #  - https://github.com/pulumi/pulumi-terraform-bridge/blob/master/pkg/tfbridge/provider.go#L58
