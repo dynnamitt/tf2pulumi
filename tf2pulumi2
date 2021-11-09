@@ -1,0 +1,16 @@
+#!/bin/sh
+terraform show -json \
+  | jq '{resources:[ .values.root_module.resources[] 
+    | .type as $type 
+    | .name as $name 
+    | .values |{$type,id,$name} ]}' #\
+ # |  pulumi import -f /dev/stdin --yes
+
+# NOW translate from
+#  "aws_s3_bucket" -> "aws:s3/bucket:Bucket"
+
+# hints 
+#  - https://github.com/pulumi/pulumi-terraform-bridge
+#  - https://github.com/pulumi/pulumi-terraform-bridge/blob/master/pkg/tfbridge/provider.go#L58
+#  - https://www.pulumi.com/docs/guides/adopting/import/
+#  - https://github.com/pulumi/pulumi/blob/73a66f48ead301bacf1d7d2833c016cf803b57c1/sdk/go/common/tokens/tokens.go#L26
